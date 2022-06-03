@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/kmturbulenz/llvm-osmesa-image:sha-3e6fde5
+    container: ghcr.io/kmturbulenz/llvm-osmesa-image:sha-5f2ef72
 
     steps:
     - uses: actions/checkout@v3

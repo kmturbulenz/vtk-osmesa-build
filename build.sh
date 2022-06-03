@@ -2,7 +2,7 @@
 
 echo "Compiling VTK"
 
-source scl_source enable rh-git218
+source scl_source enable rh-git227
 source scl_source enable rh-python38
 source /opt/python38/bin/activate
 
