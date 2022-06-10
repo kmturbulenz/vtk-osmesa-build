@@ -13,13 +13,18 @@ PWD0=$(pwd)
 
 # VTK compilation
 VTK_BRANCH="master"
-VTK_COMMIT="8234ea3c"
-VTK_VER="9.1.20220519"
+VTK_COMMIT="d9c7bc46"
 VTK_URL="https://gitlab.kitware.com/vtk/vtk.git"
 
 git clone -b $VTK_BRANCH --single-branch $VTK_URL
 cd vtk
 git checkout $VTK_COMMIT
+
+VTK_MAJOR_VERSION=$(grep -oP '(?<=set\(VTK_MAJOR_VERSION )([0-9]+)' CMake/vtkVersion.cmake)
+VTK_MINOR_VERSION=$(grep -oP '(?<=set\(VTK_MINOR_VERSION )([0-9]+)' CMake/vtkVersion.cmake)
+VTK_BUILD_VERSION=$(grep -oP '(?<=set\(VTK_BUILD_VERSION )([0-9]+)' CMake/vtkVersion.cmake)
+VTK_VER="${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}.${VTK_BUILD_VERSION}"
+
 
 mkdir build && cd build
 export LDFLAGS="-fuse-ld=lld"
