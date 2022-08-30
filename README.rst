@@ -39,7 +39,7 @@ If you want to build VTK locally on your own computer, using the same
 container image and build script, you can checkout this repository
 and run the command::
 
-    docker run --user="$(id -u):$(id -g)" --read-only --volume="$PWD:/input" --workdir="/input" ghcr.io/kmturbulenz/llvm-osmesa-image:master ./build.sh
+    docker run --user="$(id -u):$(id -g)" --read-only --rm --volume="$PWD:/input" --workdir="/input" ghcr.io/kmturbulenz/llvm-osmesa-image:master ./build.sh
 
 ****************
 Missing features

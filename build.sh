@@ -13,7 +13,7 @@ PWD0=$(pwd)
 
 # VTK compilation
 VTK_BRANCH="master"
-VTK_COMMIT="38cd588d"
+VTK_COMMIT="7c951a45"
 VTK_URL="https://gitlab.kitware.com/vtk/vtk.git"
 
 git clone -b $VTK_BRANCH --single-branch $VTK_URL
